@@ -63,14 +63,19 @@ public class Lab2P2_CarlosFlores {
                                     System.out.println("Ingrese turno: ");
                                     String turno = sc.next();
 
-                                    if (turno.equalsIgnoreCase("matutino") && checkMatutinoChef(chefs) == 7) {
-                                        System.out.println("No puedes agregar mas matutinos!");
+                                    if (turno.equalsIgnoreCase("matutino") && contMatChef != 7) {
+                                        contMatChef++;
 
+                                    } else if (turno.equalsIgnoreCase("matutino") && contMatChef == 7) {
+                                        System.out.println("No puedes agregar mas matutinos!");
                                         continue;
                                     }
-                                    if (turno.equalsIgnoreCase("vespertino") && checkVespertinoChef(chefs) == 7) {
-                                        System.out.println("No puedes agregar mas vespertinos!");
 
+                                    if (turno.equalsIgnoreCase("vespertino") && contVesChef != 7) {
+                                        contVesChef++;
+
+                                    } else if (turno.equalsIgnoreCase("vespertino") && contVesChef == 7) {
+                                        System.out.println("No puedes agregar mas vespertinos!");
                                         continue;
                                     }
 
@@ -109,36 +114,143 @@ public class Lab2P2_CarlosFlores {
                                     System.out.println("Ingrese turno: ");
                                     String turno = sc.next();
 
-                                    System.out.println("Ingrese edad: ");
-                                    int edad = sc.nextInt();
-
-                                    while (edad < 1) {
-                                        System.out.println("Numero invalido!");
-
+                                    if (currentTurn.equals("matutino") && turno.equals("matutino")) {
+                                        contMatChef--;
                                         System.out.println("Ingrese edad: ");
-                                        edad = sc.nextInt();
-                                    }
+                                        int edad = sc.nextInt();
 
-                                    System.out.println("Ingrese numero de estrellas: ");
-                                    int numEstrellas = sc.nextInt();
-                                    while (numEstrellas < 0) {
-                                        System.out.println("Numero invalido!");
+                                        while (edad < 1) {
+                                            System.out.println("Numero invalido!");
+
+                                            System.out.println("Ingrese edad: ");
+                                            edad = sc.nextInt();
+                                        }
 
                                         System.out.println("Ingrese numero de estrellas: ");
-                                        numEstrellas = sc.nextInt();
-                                    }
+                                        int numEstrellas = sc.nextInt();
+                                        while (numEstrellas < 0) {
+                                            System.out.println("Numero invalido!");
 
-                                    System.out.println("Ingrese sueldo: ");
-                                    int sueldo = sc.nextInt();
-
-                                    while (sueldo < 0) {
-                                        System.out.println("Numero invalido!");
+                                            System.out.println("Ingrese numero de estrellas: ");
+                                            numEstrellas = sc.nextInt();
+                                        }
 
                                         System.out.println("Ingrese sueldo: ");
-                                        sueldo = sc.nextInt();
+                                        int sueldo = sc.nextInt();
+
+                                        while (sueldo < 0) {
+                                            System.out.println("Numero invalido!");
+
+                                            System.out.println("Ingrese sueldo: ");
+                                            sueldo = sc.nextInt();
+                                        }
+
+                                        chefs.set(opMod, new Chefs(name, turno, edad, numEstrellas, sueldo));
+                                        contMatChef++;
+                                    }
+                                    if (currentTurn.equals("vespertino") && turno.equals("vespertino")) {
+                                        contVesChef--;
+                                        System.out.println("Ingrese edad: ");
+                                        int edad = sc.nextInt();
+
+                                        while (edad < 1) {
+                                            System.out.println("Numero invalido!");
+
+                                            System.out.println("Ingrese edad: ");
+                                            edad = sc.nextInt();
+                                        }
+
+                                        System.out.println("Ingrese numero de estrellas: ");
+                                        int numEstrellas = sc.nextInt();
+                                        while (numEstrellas < 0) {
+                                            System.out.println("Numero invalido!");
+
+                                            System.out.println("Ingrese numero de estrellas: ");
+                                            numEstrellas = sc.nextInt();
+                                        }
+
+                                        System.out.println("Ingrese sueldo: ");
+                                        int sueldo = sc.nextInt();
+
+                                        while (sueldo < 0) {
+                                            System.out.println("Numero invalido!");
+
+                                            System.out.println("Ingrese sueldo: ");
+                                            sueldo = sc.nextInt();
+                                        }
+
+                                        chefs.set(opMod, new Chefs(name, turno, edad, numEstrellas, sueldo));
+                                        contVesChef++;
+                                    }
+                                    if (currentTurn.equals("matutino") && turno.equals("vespertino")) {
+                                        contMatChef--;
+                                        System.out.println("Ingrese edad: ");
+                                        int edad = sc.nextInt();
+
+                                        while (edad < 1) {
+                                            System.out.println("Numero invalido!");
+
+                                            System.out.println("Ingrese edad: ");
+                                            edad = sc.nextInt();
+                                        }
+
+                                        System.out.println("Ingrese numero de estrellas: ");
+                                        int numEstrellas = sc.nextInt();
+                                        while (numEstrellas < 0) {
+                                            System.out.println("Numero invalido!");
+
+                                            System.out.println("Ingrese numero de estrellas: ");
+                                            numEstrellas = sc.nextInt();
+                                        }
+
+                                        System.out.println("Ingrese sueldo: ");
+                                        int sueldo = sc.nextInt();
+
+                                        while (sueldo < 0) {
+                                            System.out.println("Numero invalido!");
+
+                                            System.out.println("Ingrese sueldo: ");
+                                            sueldo = sc.nextInt();
+                                        }
+
+                                        chefs.set(opMod, new Chefs(name, turno, edad, numEstrellas, sueldo));
+                                        contVesChef++;
+                                    }
+                                    if (currentTurn.equals("vespertino") && turno.equals("matutino")) {
+                                        contVesChef--;
+                                        System.out.println("Ingrese edad: ");
+                                        int edad = sc.nextInt();
+
+                                        while (edad < 1) {
+                                            System.out.println("Numero invalido!");
+
+                                            System.out.println("Ingrese edad: ");
+                                            edad = sc.nextInt();
+                                        }
+
+                                        System.out.println("Ingrese numero de estrellas: ");
+                                        int numEstrellas = sc.nextInt();
+                                        while (numEstrellas < 0) {
+                                            System.out.println("Numero invalido!");
+
+                                            System.out.println("Ingrese numero de estrellas: ");
+                                            numEstrellas = sc.nextInt();
+                                        }
+
+                                        System.out.println("Ingrese sueldo: ");
+                                        int sueldo = sc.nextInt();
+
+                                        while (sueldo < 0) {
+                                            System.out.println("Numero invalido!");
+
+                                            System.out.println("Ingrese sueldo: ");
+                                            sueldo = sc.nextInt();
+                                        }
+
+                                        chefs.set(opMod, new Chefs(name, turno, edad, numEstrellas, sueldo));
+                                        contMatChef++;
                                     }
 
-                                    chefs.set(opMod, new Chefs(name, turno, edad, numEstrellas, sueldo));
                                 } else {
                                     System.out.println("Esa opcion no existe!");
                                     continue;
@@ -155,6 +267,14 @@ public class Lab2P2_CarlosFlores {
                                 int opMod = sc.nextInt();
 
                                 opMod--;
+                                
+                                String currentTurn = bartenders.get(opMod).getTurno();
+
+                                if (currentTurn.equals("matutino")) {
+                                    contMatChef--;
+                                } else if (currentTurn.equals("vespertino")) {
+                                    contVesChef--;
+                                }
 
                                 if (opMod >= 0 && opMod < chefs.size()) {
                                     chefs.remove(opMod);
@@ -195,14 +315,19 @@ public class Lab2P2_CarlosFlores {
                                     System.out.println("Ingrese turno: ");
                                     String turno = sc.next();
 
-                                    if (turno.equalsIgnoreCase("matutino") && checkMatutinoMes(meseros) == 4) {
-                                        System.out.println("No puedes agregar mas matutinos!");
+                                    if (turno.equalsIgnoreCase("matutino") && contMatMes != 4) {
+                                        contMatMes++;
 
+                                    } else if (turno.equalsIgnoreCase("matutino") && contMatMes == 4) {
+                                        System.out.println("No puedes agregar mas matutinos!");
                                         continue;
                                     }
-                                    if (turno.equalsIgnoreCase("vespertino") && checkVespertinoMes(meseros) == 4) {
-                                        System.out.println("No puedes agregar mas vespertinos!");
 
+                                    if (turno.equalsIgnoreCase("vespertino") && contVesMes != 4) {
+                                        contVesMes++;
+
+                                    } else if (turno.equalsIgnoreCase("vespertino") && contVesMes == 4) {
+                                        System.out.println("No puedes agregar mas vespertinos!");
                                         continue;
                                     }
 
@@ -233,6 +358,8 @@ public class Lab2P2_CarlosFlores {
 
                                 opMod--;
 
+                                String currentTurn = bartenders.get(opMod).getTurno();
+
                                 if (opMod >= 0 && opMod < meseros.size()) {
                                     System.out.println("Ingrese nombre: ");
                                     String name = sc.next();
@@ -240,36 +367,150 @@ public class Lab2P2_CarlosFlores {
                                     System.out.println("Ingrese turno: ");
                                     String turno = sc.next();
 
-                                    System.out.println("Ingrese edad: ");
-                                    int edad = sc.nextInt();
-
-                                    while (edad < 1) {
-                                        System.out.println("Numero invalido!");
+                                    if (currentTurn.equals("matutino") && turno.equals("matutino")) {
+                                        contMatMes--;
 
                                         System.out.println("Ingrese edad: ");
-                                        edad = sc.nextInt();
-                                    }
+                                        int edad = sc.nextInt();
 
-                                    System.out.println("Ingrese sueldo: ");
-                                    int sueldo = sc.nextInt();
+                                        while (edad < 1) {
+                                            System.out.println("Numero invalido!");
 
-                                    while (sueldo < 0) {
-                                        System.out.println("Numero invalido!");
+                                            System.out.println("Ingrese edad: ");
+                                            edad = sc.nextInt();
+                                        }
 
                                         System.out.println("Ingrese sueldo: ");
-                                        sueldo = sc.nextInt();
-                                    }
-                                    System.out.println("Ingrese propina: ");
-                                    int propina = sc.nextInt();
+                                        int sueldo = sc.nextInt();
 
-                                    while (propina < 0) {
-                                        System.out.println("Numero invalido!");
+                                        while (sueldo < 0) {
+                                            System.out.println("Numero invalido!");
 
+                                            System.out.println("Ingrese sueldo: ");
+                                            sueldo = sc.nextInt();
+                                        }
                                         System.out.println("Ingrese propina: ");
-                                        propina = sc.nextInt();
+                                        int propina = sc.nextInt();
+
+                                        while (propina < 0) {
+                                            System.out.println("Numero invalido!");
+
+                                            System.out.println("Ingrese propina: ");
+                                            propina = sc.nextInt();
+                                        }
+
+                                        meseros.set(opMod, new Meseros(name, turno, edad, sueldo, propina));
+
+                                        contMatMes++;
                                     }
 
-                                    meseros.set(opMod, new Meseros(name, turno, edad, sueldo, propina));
+                                    if (currentTurn.equals("vespertino") && turno.equals("vespertino")) {
+                                        contVesMes--;
+                                        System.out.println("Ingrese edad: ");
+                                        int edad = sc.nextInt();
+
+                                        while (edad < 1) {
+                                            System.out.println("Numero invalido!");
+
+                                            System.out.println("Ingrese edad: ");
+                                            edad = sc.nextInt();
+                                        }
+
+                                        System.out.println("Ingrese sueldo: ");
+                                        int sueldo = sc.nextInt();
+
+                                        while (sueldo < 0) {
+                                            System.out.println("Numero invalido!");
+
+                                            System.out.println("Ingrese sueldo: ");
+                                            sueldo = sc.nextInt();
+                                        }
+                                        System.out.println("Ingrese propina: ");
+                                        int propina = sc.nextInt();
+
+                                        while (propina < 0) {
+                                            System.out.println("Numero invalido!");
+
+                                            System.out.println("Ingrese propina: ");
+                                            propina = sc.nextInt();
+                                        }
+
+                                        meseros.set(opMod, new Meseros(name, turno, edad, sueldo, propina));
+
+                                        contVesMes++;
+                                    }
+
+                                    if (currentTurn.equals("vespertino") && turno.equals("matutino")) {
+                                        contVesMes--;
+                                        System.out.println("Ingrese edad: ");
+                                        int edad = sc.nextInt();
+
+                                        while (edad < 1) {
+                                            System.out.println("Numero invalido!");
+
+                                            System.out.println("Ingrese edad: ");
+                                            edad = sc.nextInt();
+                                        }
+
+                                        System.out.println("Ingrese sueldo: ");
+                                        int sueldo = sc.nextInt();
+
+                                        while (sueldo < 0) {
+                                            System.out.println("Numero invalido!");
+
+                                            System.out.println("Ingrese sueldo: ");
+                                            sueldo = sc.nextInt();
+                                        }
+                                        System.out.println("Ingrese propina: ");
+                                        int propina = sc.nextInt();
+
+                                        while (propina < 0) {
+                                            System.out.println("Numero invalido!");
+
+                                            System.out.println("Ingrese propina: ");
+                                            propina = sc.nextInt();
+                                        }
+
+                                        meseros.set(opMod, new Meseros(name, turno, edad, sueldo, propina));
+
+                                        contMatMes++;
+                                    }
+                                    if (currentTurn.equals("matutino") && turno.equals("vespertino")) {
+                                        contMatMes--;
+                                        System.out.println("Ingrese edad: ");
+                                        int edad = sc.nextInt();
+
+                                        while (edad < 1) {
+                                            System.out.println("Numero invalido!");
+
+                                            System.out.println("Ingrese edad: ");
+                                            edad = sc.nextInt();
+                                        }
+
+                                        System.out.println("Ingrese sueldo: ");
+                                        int sueldo = sc.nextInt();
+
+                                        while (sueldo < 0) {
+                                            System.out.println("Numero invalido!");
+
+                                            System.out.println("Ingrese sueldo: ");
+                                            sueldo = sc.nextInt();
+                                        }
+                                        System.out.println("Ingrese propina: ");
+                                        int propina = sc.nextInt();
+
+                                        while (propina < 0) {
+                                            System.out.println("Numero invalido!");
+
+                                            System.out.println("Ingrese propina: ");
+                                            propina = sc.nextInt();
+                                        }
+
+                                        meseros.set(opMod, new Meseros(name, turno, edad, sueldo, propina));
+
+                                        contVesMes++;
+                                    }
+
                                 } else {
                                     System.out.println("Esa opcion no existe!");
                                     continue;
@@ -286,8 +527,18 @@ public class Lab2P2_CarlosFlores {
                                 int opMod = sc.nextInt();
 
                                 opMod--;
+                                
+                                String currentTurn = bartenders.get(opMod).getTurno();
+
+                                if (currentTurn.equals("matutino")) {
+                                    contMatMes--;
+                                } else if (currentTurn.equals("vespertino")) {
+                                    contVesMes--;
+                                }
+                                
 
                                 if (opMod >= 0 && opMod < meseros.size()) {
+                                    
                                     meseros.remove(opMod);
                                     System.out.println("Eliminado exitosamente!");
                                 } else {
@@ -330,16 +581,15 @@ public class Lab2P2_CarlosFlores {
                                         contMatBar++;
                                         System.out.println(contMatBar);
 
-                                    } else {
+                                    } else if (turno.equalsIgnoreCase("matutino") && contMatBar == 2) {
                                         System.out.println("No puedes agregar mas matutinos!");
                                         continue;
                                     }
-                                    
-                                    
-                                    if (turno.equalsIgnoreCase("vespertino") && contVesBar == 2) {
+
+                                    if (turno.equalsIgnoreCase("vespertino") && contVesBar != 2) {
                                         contVesBar++;
 
-                                    } else {
+                                    } else if (turno.equalsIgnoreCase("vespertino") && contVesBar == 2) {
                                         System.out.println("No puedes agregar mas vespertinos!");
                                         continue;
                                     }
@@ -368,9 +618,9 @@ public class Lab2P2_CarlosFlores {
                                 System.out.println("Que posicion de bartender desea modificar?");
                                 int opMod = sc.nextInt();
 
-                                String currentTurn = bartenders.get(opMod).getTurno();
-
                                 opMod--;
+
+                                String currentTurn = bartenders.get(opMod).getTurno();
 
                                 if (opMod >= 0 && opMod < bartenders.size()) {
                                     System.out.println("Ingrese nombre: ");
@@ -381,50 +631,142 @@ public class Lab2P2_CarlosFlores {
 
                                     if (currentTurn.equals("matutino") && turno.equals("matutino")) {
                                         contMatBar--;
+
+                                        System.out.println("Ingrese edad: ");
+                                        int edad = sc.nextInt();
+
+                                        while (edad < 1) {
+                                            System.out.println("Numero invalido!");
+
+                                            System.out.println("Ingrese edad: ");
+                                            edad = sc.nextInt();
+                                        }
+
+                                        System.out.println("Ingrese sueldo: ");
+                                        int sueldo = sc.nextInt();
+
+                                        while (sueldo < 0) {
+                                            System.out.println("Numero invalido!");
+
+                                            System.out.println("Ingrese sueldo: ");
+                                            sueldo = sc.nextInt();
+                                        }
+                                        System.out.println("Ingrese numero de licores: ");
+                                        int numLicores = sc.nextInt();
+
+                                        while (numLicores < 0) {
+                                            System.out.println("Numero invalido!");
+
+                                            System.out.println("Ingrese numero de licores: ");
+                                            numLicores = sc.nextInt();
+                                        }
+
+                                        bartenders.set(opMod, new Bartenders(name, turno, edad, sueldo, numLicores));
+                                        contMatBar++;
                                     }
                                     if (currentTurn.equals("vespertino") && turno.equals("vespertino")) {
                                         contVesBar--;
+                                        System.out.println("Ingrese edad: ");
+                                        int edad = sc.nextInt();
+
+                                        while (edad < 1) {
+                                            System.out.println("Numero invalido!");
+
+                                            System.out.println("Ingrese edad: ");
+                                            edad = sc.nextInt();
+                                        }
+
+                                        System.out.println("Ingrese sueldo: ");
+                                        int sueldo = sc.nextInt();
+
+                                        while (sueldo < 0) {
+                                            System.out.println("Numero invalido!");
+
+                                            System.out.println("Ingrese sueldo: ");
+                                            sueldo = sc.nextInt();
+                                        }
+                                        System.out.println("Ingrese numero de licores: ");
+                                        int numLicores = sc.nextInt();
+
+                                        while (numLicores < 0) {
+                                            System.out.println("Numero invalido!");
+
+                                            System.out.println("Ingrese numero de licores: ");
+                                            numLicores = sc.nextInt();
+                                        }
+
+                                        bartenders.set(opMod, new Bartenders(name, turno, edad, sueldo, numLicores));
+                                        contVesBar++;
                                     }
                                     if (currentTurn.equals("vespertino") && turno.equals("matutino") && contMatBar != 2) {
                                         contVesBar--;
+                                        System.out.println("Ingrese edad: ");
+                                        int edad = sc.nextInt();
+
+                                        while (edad < 1) {
+                                            System.out.println("Numero invalido!");
+
+                                            System.out.println("Ingrese edad: ");
+                                            edad = sc.nextInt();
+                                        }
+
+                                        System.out.println("Ingrese sueldo: ");
+                                        int sueldo = sc.nextInt();
+
+                                        while (sueldo < 0) {
+                                            System.out.println("Numero invalido!");
+
+                                            System.out.println("Ingrese sueldo: ");
+                                            sueldo = sc.nextInt();
+                                        }
+                                        System.out.println("Ingrese numero de licores: ");
+                                        int numLicores = sc.nextInt();
+
+                                        while (numLicores < 0) {
+                                            System.out.println("Numero invalido!");
+
+                                            System.out.println("Ingrese numero de licores: ");
+                                            numLicores = sc.nextInt();
+                                        }
+
+                                        bartenders.set(opMod, new Bartenders(name, turno, edad, sueldo, numLicores));
                                         contMatBar++;
                                     }
                                     if (currentTurn.equals("matutino") && turno.equals("vespertino") && contVesBar != 2) {
                                         contVesBar++;
+                                        System.out.println("Ingrese edad: ");
+                                        int edad = sc.nextInt();
+
+                                        while (edad < 1) {
+                                            System.out.println("Numero invalido!");
+
+                                            System.out.println("Ingrese edad: ");
+                                            edad = sc.nextInt();
+                                        }
+
+                                        System.out.println("Ingrese sueldo: ");
+                                        int sueldo = sc.nextInt();
+
+                                        while (sueldo < 0) {
+                                            System.out.println("Numero invalido!");
+
+                                            System.out.println("Ingrese sueldo: ");
+                                            sueldo = sc.nextInt();
+                                        }
+                                        System.out.println("Ingrese numero de licores: ");
+                                        int numLicores = sc.nextInt();
+
+                                        while (numLicores < 0) {
+                                            System.out.println("Numero invalido!");
+
+                                            System.out.println("Ingrese numero de licores: ");
+                                            numLicores = sc.nextInt();
+                                        }
+
+                                        bartenders.set(opMod, new Bartenders(name, turno, edad, sueldo, numLicores));
                                         contMatBar--;
                                     }
 
-                                    System.out.println("Ingrese edad: ");
-                                    int edad = sc.nextInt();
-
-                                    while (edad < 1) {
-                                        System.out.println("Numero invalido!");
-
-                                        System.out.println("Ingrese edad: ");
-                                        edad = sc.nextInt();
-                                    }
-
-                                    System.out.println("Ingrese sueldo: ");
-                                    int sueldo = sc.nextInt();
-
-                                    while (sueldo < 0) {
-                                        System.out.println("Numero invalido!");
-
-                                        System.out.println("Ingrese sueldo: ");
-                                        sueldo = sc.nextInt();
-                                    }
-                                    System.out.println("Ingrese numero de licores: ");
-                                    int numLicores = sc.nextInt();
-
-                                    while (numLicores < 0) {
-                                        System.out.println("Numero invalido!");
-
-                                        System.out.println("Ingrese numero de licores: ");
-                                        numLicores = sc.nextInt();
-                                    }
-
-                                    bartenders.set(opMod, new Bartenders(name, turno, edad, sueldo, numLicores));
-                                    contMatBar++;
                                 } else {
                                     System.out.println("Esa opcion no existe!");
                                     continue;
@@ -442,6 +784,14 @@ public class Lab2P2_CarlosFlores {
                                 int opMod = sc.nextInt();
 
                                 opMod--;
+
+                                String currentTurn = bartenders.get(opMod).getTurno();
+
+                                if (currentTurn.equals("matutino")) {
+                                    contMatBar--;
+                                } else if (currentTurn.equals("vespertino")) {
+                                    contVesBar--;
+                                }
 
                                 if (opMod >= 0 && opMod < bartenders.size()) {
                                     bartenders.remove(opMod);
@@ -597,65 +947,6 @@ public class Lab2P2_CarlosFlores {
         }
 
         return totalPrice;
-    }
-
-    static int checkMatutinoChef(ArrayList<Chefs> c) {
-        int cant = 0;
-        for (Chefs chef : c) {
-            if (chef.getTurno().equalsIgnoreCase("matutino")) {
-                cant++;
-            }
-        }
-        return cant;
-    }
-
-    static int checkVespertinoChef(ArrayList<Chefs> c) {
-        int cant = 0;
-        for (Chefs chef : c) {
-            if (chef.getTurno().equalsIgnoreCase("vespertino")) {
-                cant++;
-            }
-        }
-        return cant;
-    }
-
-    static int checkMatutinoMes(ArrayList<Meseros> m) {
-        int cant = 0;
-        for (Meseros mesero : m) {
-            if (mesero.getTurno().equalsIgnoreCase("matutino")) {
-                cant++;
-            }
-        }
-        return cant;
-    }
-
-    static int checkVespertinoMes(ArrayList<Meseros> m) {
-        int cant = 0;
-        for (Meseros mesero : m) {
-            if (mesero.getTurno().equalsIgnoreCase("vespertino")) {
-                cant++;
-            }
-        }
-        return cant;
-    }
-
-    static void checkMatutinoBar(ArrayList<Bartenders> b) {
-        for (Bartenders bartender : b) {
-            if (bartender.getTurno().equalsIgnoreCase("matutino")) {
-                contMatBar++;
-            }
-        }
-
-    }
-
-    static int checkVespertinoBar(ArrayList<Bartenders> b) {
-        int cant = 0;
-        for (Bartenders bartender : b) {
-            if (bartender.getTurno().equalsIgnoreCase("vespertino")) {
-                cant++;
-            }
-        }
-        return cant;
     }
 
 }
